@@ -2,10 +2,10 @@
 
 Public Class Pizza
 
-    Dim id, taille As Integer
-    Dim name As String
-    Dim ingredients, supplements As List(Of String)
-    Dim prix As Single
+    Public id, taille As Integer
+    Public name As String
+    Public ingredients, supplements As List(Of String)
+    Public prix As Single
 
     Public Sub New(ByVal id As Integer, ByVal name As String, ByVal taille As Integer, ByVal ingredients As String, ByVal prix As Single)
         Me.id = id

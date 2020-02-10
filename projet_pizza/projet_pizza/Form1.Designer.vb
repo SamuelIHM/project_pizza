@@ -22,30 +22,14 @@ Partial Class Form1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-<<<<<<< HEAD
-        Me.SuspendLayout()
-        '
-        'Form1
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
-        Me.ResumeLayout(False)
-
-    End Sub
-=======
         Me.PanelPanier = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelPizza = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PanelPanier.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.PanelPizza.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelPanier
@@ -92,10 +76,9 @@ Partial Class Form1
         'PanelPizza
         '
         Me.PanelPizza.AutoScroll = True
-        Me.PanelPizza.Controls.Add(Me.Panel2)
         Me.PanelPizza.Location = New System.Drawing.Point(35, 71)
         Me.PanelPizza.Name = "PanelPizza"
-        Me.PanelPizza.Size = New System.Drawing.Size(666, 606)
+        Me.PanelPizza.Size = New System.Drawing.Size(710, 606)
         Me.PanelPizza.TabIndex = 1
         '
         'Label2
@@ -108,14 +91,6 @@ Partial Class Form1
         Me.Label2.Size = New System.Drawing.Size(146, 25)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Pizza pour tous"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Location = New System.Drawing.Point(4, 4)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(659, 118)
-        Me.Panel2.TabIndex = 0
         '
         'Form1
         '
@@ -132,7 +107,6 @@ Partial Class Form1
         Me.PanelPanier.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.PanelPizza.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -143,7 +117,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents PanelPizza As Panel
     Friend WithEvents Button1 As Button
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Label2 As Label
->>>>>>> 69080351ad14c6a01660a9326eb1e3139b3babbe
 End Class

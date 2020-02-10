@@ -2,13 +2,26 @@ Imports projet_pizza.Pizza
 
 Public Class Form1
 
-
+    Dim pizzas As New List(Of Pizza)
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Console.WriteLine("toto")
+        Load_Pizza()
 
-        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("C:\Users\costedo\Documents\classeurPizza.csv")
+        For index = 0 To pizzas.Count - 1
+            Dim zone As pizzaChoice
+            zone = New pizzaChoice
+            zone.Location = New Point(10, index * 130)
+            zone.setPizza(pizzas(index))
+            PanelPizza.Controls.Add(zone)
+        Next
+
+    End Sub
+
+    Private Sub Load_Pizza()
+
+        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("./classeurPizza.csv")
 
             MyReader.TextFieldType = FileIO.FieldType.Delimited
             MyReader.SetDelimiters(";")
@@ -25,15 +38,14 @@ Public Class Form1
                         currentRow.GetValue(3),
                         Single.Parse(currentRow.GetValue(4)))
                     p.Print()
+                    pizzas.Add(p)
                 Catch ex As Exception
 
                 End Try
             End While
 
-
-
-
-
         End Using
+
     End Sub
+
 End Class
