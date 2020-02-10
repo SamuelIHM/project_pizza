@@ -1,5 +1,7 @@
 ﻿Public Class pizzaChoice
 
+    Public Event pizzaAdded(pizza As Pizza)
+
     Private pizza As Pizza
 
     Public Sub setPizza(piz As Pizza)
@@ -16,4 +18,7 @@
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        RaiseEvent pizzaAdded(pizza)
+    End Sub
 End Class

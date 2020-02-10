@@ -8,14 +8,7 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Console.WriteLine("toto")
         Load_Pizza()
-
-        For index = 0 To pizzas.Count - 1
-            Dim zone As pizzaChoice
-            zone = New pizzaChoice
-            zone.Location = New Point(10, index * 130)
-            zone.setPizza(pizzas(index))
-            PanelPizza.Controls.Add(zone)
-        Next
+        showChoices()
 
     End Sub
 
@@ -46,6 +39,21 @@ Public Class Form1
 
         End Using
 
+    End Sub
+
+    Private Sub showChoices()
+        For index = 0 To pizzas.Count - 1
+            Dim zone As pizzaChoice
+            zone = New pizzaChoice
+            zone.Location = New Point(10, index * 130)
+            zone.setPizza(pizzas(index))
+            AddHandler zone.pizzaAdded, AddressOf ajouterPizzaButtonClicked
+            PanelPizza.Controls.Add(zone)
+        Next
+    End Sub
+
+    Private Sub ajouterPizzaButtonClicked(pizza As Pizza)
+        Console.WriteLine(pizza.name)
     End Sub
 
 End Class
