@@ -1,0 +1,10 @@
+id;nom;base;ingrédient;prix;
+1;Reine;tomate; Jambon, Emmental, Champignons;9;
+2;Pizza 4 fromages;tomate;Emmental, Mozzarella, Reblochon, Fromage de chèvre, Olives;9,5;
+3;Pizza Chorizo;tomate;Chrorizo, Emmental, Poivron, Olives;10;
+4;Pizza Kebab;tomate;Viande kebab, Emmental, Tomates, Oignons rouges, Sauce blanche, Olives;11;
+5;Royale;tomate;Champignons, Jambon, Emmental, Lardons, Oignons rouges, Reblochon;10;
+6;Pizza Savoyarde;crème;Emmental, Pommes de terre, Lardons, Oignons rouges, Reblochons;11;
+7;Pizza Norvégienne;crème;Emmental, Saumon fumé, Jus de citron, Aneth, Olives;13;
+8;Pizza Hawaienne;crème;Jambon, Gorgonzola, Emmental, Ananas, Olives;11,5;
+9;Pizza au Canard;crème;Magret de canard, Confit de canard, Emmental, Persillade, Olives;13;
