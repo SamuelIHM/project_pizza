@@ -1,5 +1,4 @@
-﻿Imports projet_pizza.Pizza
-
+Imports projet_pizza.Pizza
 
 Public Class Form1
 
