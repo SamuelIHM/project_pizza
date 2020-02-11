@@ -33,16 +33,16 @@ Partial Class pizzaChoice
         '
         Me.Panel1.Location = New System.Drawing.Point(13, 13)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(113, 94)
+        Me.Panel1.Size = New System.Drawing.Size(146, 109)
         Me.Panel1.TabIndex = 0
         '
         'pizzaName
         '
         Me.pizzaName.AutoSize = True
-        Me.pizzaName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pizzaName.Location = New System.Drawing.Point(144, 13)
+        Me.pizzaName.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pizzaName.Location = New System.Drawing.Point(178, 13)
         Me.pizzaName.Name = "pizzaName"
-        Me.pizzaName.Size = New System.Drawing.Size(71, 25)
+        Me.pizzaName.Size = New System.Drawing.Size(86, 29)
         Me.pizzaName.TabIndex = 1
         Me.pizzaName.Text = "Label1"
         '
@@ -50,7 +50,7 @@ Partial Class pizzaChoice
         '
         Me.PizzaIngredients.AutoSize = True
         Me.PizzaIngredients.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PizzaIngredients.Location = New System.Drawing.Point(146, 53)
+        Me.PizzaIngredients.Location = New System.Drawing.Point(180, 58)
         Me.PizzaIngredients.Name = "PizzaIngredients"
         Me.PizzaIngredients.Size = New System.Drawing.Size(39, 13)
         Me.PizzaIngredients.TabIndex = 2
@@ -58,7 +58,7 @@ Partial Class pizzaChoice
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(392, 84)
+        Me.Button1.Location = New System.Drawing.Point(533, 99)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(111, 23)
         Me.Button1.TabIndex = 3
@@ -68,10 +68,10 @@ Partial Class pizzaChoice
         'pizzaPrice
         '
         Me.pizzaPrice.AutoSize = True
-        Me.pizzaPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pizzaPrice.Location = New System.Drawing.Point(389, 25)
+        Me.pizzaPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pizzaPrice.Location = New System.Drawing.Point(553, 45)
         Me.pizzaPrice.Name = "pizzaPrice"
-        Me.pizzaPrice.Size = New System.Drawing.Size(57, 20)
+        Me.pizzaPrice.Size = New System.Drawing.Size(77, 26)
         Me.pizzaPrice.TabIndex = 4
         Me.pizzaPrice.Text = "Label1"
         '
@@ -86,7 +86,7 @@ Partial Class pizzaChoice
         Me.Controls.Add(Me.pizzaName)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "pizzaChoice"
-        Me.Size = New System.Drawing.Size(557, 122)
+        Me.Size = New System.Drawing.Size(660, 138)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

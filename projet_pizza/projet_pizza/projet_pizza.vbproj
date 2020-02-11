@@ -74,13 +74,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Accueil.designer.vb">
+      <DependentUpon>Accueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accueil.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,6 +96,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Panier.Designer.vb">
+      <DependentUpon>Panier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Panier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pizza.vb" />
     <Compile Include="pizzaChoice.Designer.vb">
       <DependentUpon>pizzaChoice.vb</DependentUpon>
@@ -103,16 +109,28 @@
     <Compile Include="pizzaChoice.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="menuConfigurer.Designer.vb">
+      <DependentUpon>menuConfigurer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="menuConfigurer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menuConfigurer.resx">
+      <DependentUpon>menuConfigurer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panier.resx">
+      <DependentUpon>Panier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pizzaChoice.resx">
       <DependentUpon>pizzaChoice.vb</DependentUpon>

@@ -2,8 +2,9 @@ Imports projet_pizza.Pizza
 
 Public Class Form1
 
-    Dim pizzas As New List(Of Pizza)
-
+    'Dim pizzas As New List(Of Pizza)
+    'Dim pizzasSelected As New List(Of Pizza)
+    Public Event PanierWindow()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Console.WriteLine("toto")
@@ -45,7 +46,7 @@ Public Class Form1
         For index = 0 To pizzas.Count - 1
             Dim zone As pizzaChoice
             zone = New pizzaChoice
-            zone.Location = New Point(10, index * 130)
+            zone.Location = New Point(10, index * 150)
             zone.setPizza(pizzas(index))
             AddHandler zone.pizzaAdded, AddressOf ajouterPizzaButtonClicked
             PanelPizza.Controls.Add(zone)
