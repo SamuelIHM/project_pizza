@@ -25,9 +25,9 @@ Partial Class Form1
         Me.PanelPizza = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.OvalShape1 = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.ButtonToPanier = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.OvalShape1 = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.LabelCountArticle = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -60,6 +60,16 @@ Partial Class Form1
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
         '
+        'OvalShape1
+        '
+        Me.OvalShape1.BackColor = System.Drawing.Color.Red
+        Me.OvalShape1.BorderColor = System.Drawing.SystemColors.Control
+        Me.OvalShape1.FillColor = System.Drawing.Color.Red
+        Me.OvalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.OvalShape1.Location = New System.Drawing.Point(719, 10)
+        Me.OvalShape1.Name = "OvalShape1"
+        Me.OvalShape1.Size = New System.Drawing.Size(24, 24)
+        '
         'ButtonToPanier
         '
         Me.ButtonToPanier.BackColor = System.Drawing.Color.White
@@ -78,16 +88,6 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Panier"
-        '
-        'OvalShape1
-        '
-        Me.OvalShape1.BackColor = System.Drawing.Color.Red
-        Me.OvalShape1.BorderColor = System.Drawing.SystemColors.Control
-        Me.OvalShape1.FillColor = System.Drawing.Color.Red
-        Me.OvalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.OvalShape1.Location = New System.Drawing.Point(719, 10)
-        Me.OvalShape1.Name = "OvalShape1"
-        Me.OvalShape1.Size = New System.Drawing.Size(24, 24)
         '
         'LabelCountArticle
         '

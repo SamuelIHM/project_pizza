@@ -18,6 +18,7 @@
         LabelPlus.Text = ""
         LabelMinus.Text = ""
 
+        ' On ajoute les aliments enlevés et ajoutés
         If pizza.ingredientsAccepted.Count < pizza.ingredients.Count Then
             LabelMinus.Text = "- "
         End If
@@ -41,7 +42,7 @@
         PanelPhoto.BackgroundImage = New Bitmap(image, New Point(PanelPhoto.Width, PanelPhoto.Height))
     End Sub
 
-    Private Sub pizzaPanier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub PizzaPanier_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 

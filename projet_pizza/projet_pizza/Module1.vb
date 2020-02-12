@@ -31,11 +31,14 @@
         Validation.Hide()
     End Sub
 
+    ' Fonction pour aller sur la fenêtre de l'accueil
     Private Sub To_Accueil()
         Panier.Hide()
         Accueil.Show()
         Validation.Hide()
     End Sub
+
+    ' Fonction pour aller sur l'écran final
     Private Sub To_End()
         Panier.Hide()
         Accueil.Hide()

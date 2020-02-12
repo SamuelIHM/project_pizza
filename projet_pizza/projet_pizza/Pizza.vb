@@ -1,6 +1,7 @@
 ﻿Imports Microsoft.VisualBasic
 
 Public Class Pizza
+    ' Definit un objet Pizza
 
     Public id, taille As Integer
     Public name, img As String

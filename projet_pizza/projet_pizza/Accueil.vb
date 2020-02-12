@@ -22,6 +22,7 @@ Public Class Form1
 
     Private Sub Load_Pizza()
 
+        ' On charge les pizzas existantes
         Using MyReader As New FileIO.TextFieldParser("./classeurPizza.csv")
 
             MyReader.TextFieldType = FileIO.FieldType.Delimited
@@ -50,13 +51,14 @@ Public Class Form1
     End Sub
 
     Private Sub ShowChoices()
+        ' Permet d'afficher les userControl des pizzas
         For index = 0 To pizzas.Count - 1
-            Dim zone As pizzaChoice
-            zone = New pizzaChoice With {
+            Dim zone As PizzaChoice
+            zone = New PizzaChoice With {
                 .Location = New Point(10, index * 150)
             }
-            zone.setPizza(pizzas(index))
-            AddHandler zone.pizzaAdded, AddressOf AjouterPizzaButtonClicked
+            zone.SetPizza(pizzas(index))
+            AddHandler zone.PizzaAdded, AddressOf AjouterPizzaButtonClicked
             PanelPizza.Controls.Add(zone)
         Next
     End Sub
@@ -79,6 +81,7 @@ Public Class Form1
     End Sub
 
     Private Sub MenuConfigOpened(pizza As Pizza)
+        ' Ouvre le menu de configuration des pizzas
         menuConfig = New MenuConfigurer(pizza) With {
             .Location = New Point(150, 80)
         }
@@ -89,6 +92,7 @@ Public Class Form1
     End Sub
 
     Private Sub MenuConfigClose()
+        ' Ferme le menu de configuration des pizzas
         Controls.Remove(menuConfig)
         Panier.SetButtonValide()
         PanelPizza.Enabled = True
@@ -96,10 +100,12 @@ Public Class Form1
     End Sub
 
     Private Sub ButtonToPanier_Click(sender As Object, e As EventArgs) Handles ButtonToPanier.Click
+        ' Aller à la fenêtre du panier
         RaiseEvent PanierWindow()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         ButtonToPanier_Click(sender, e)
     End Sub
+
 End Class

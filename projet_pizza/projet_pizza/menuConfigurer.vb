@@ -1,7 +1,6 @@
 ﻿Public Class MenuConfigurer
-
-    Private oldPizza, newPizza As Pizza
-
+    Private ReadOnly oldPizza As Pizza
+    Private ReadOnly newPizza As Pizza
     Public Event CloseMenu()
     Public Event Valider()
 
@@ -92,6 +91,7 @@
     End Sub
 
     Private Sub ChangeIngredientAccepted()
+        ' Quand on change les ingrédients, on regarde lesquels il reste
         Dim list As List(Of String)
         list = New List(Of String)
         For Each ingredient In CheckedListBox1.CheckedItems
@@ -100,6 +100,7 @@
         newPizza.ingredientsAccepted = list
     End Sub
     Private Sub ChangeSupplement()
+        ' Quand on change les supplément, on regarde lesquels il reste
         Dim list As List(Of String)
         list = New List(Of String)
         For Each ingredient In CheckedListBox2.CheckedItems

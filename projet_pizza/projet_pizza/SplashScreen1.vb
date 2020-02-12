@@ -36,8 +36,4 @@
         Module1.Main()
         Me.Hide()
     End Sub
-
-    Private Sub MainLayoutPanel_Click(sender As Object, e As EventArgs) Handles MainLayoutPanel.Click
-
-    End Sub
 End Class

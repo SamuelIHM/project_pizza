@@ -1,10 +1,12 @@
-﻿Public Class pizzaChoice
+﻿Public Class PizzaChoice
 
-    Public Event pizzaAdded(pizza As Pizza)
+    ' Permet d'afficher les choix de pizza dans la liste de l'accueil
+
+    Public Event PizzaAdded(pizza As Pizza)
 
     Private pizza As Pizza
 
-    Public Sub setPizza(piz As Pizza)
+    Public Sub SetPizza(piz As Pizza)
         pizza = piz
         pizzaPrice.Text = pizza.prix.ToString + " €"
         pizzaName.Text = pizza.name
@@ -19,12 +21,8 @@
 
     End Sub
 
-    Private Sub UserControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        RaiseEvent pizzaAdded(pizza)
+        RaiseEvent PizzaAdded(pizza)
     End Sub
 
 End Class
