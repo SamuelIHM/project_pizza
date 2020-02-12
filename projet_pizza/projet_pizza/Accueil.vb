@@ -2,15 +2,13 @@ Imports projet_pizza.Pizza
 
 Public Class Form1
 
-    'Dim pizzas As New List(Of Pizza)
-    'Dim pizzasSelected As New List(Of Pizza)
     Public Event PanierWindow()
 
-    Private menu As menuConfigurer
+    Private menuConfig As MenuConfigurer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Load_Pizza()
-        showChoices()
+        ShowChoices()
 
     End Sub
 
@@ -24,7 +22,7 @@ Public Class Form1
 
     Private Sub Load_Pizza()
 
-        Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("./classeurPizza.csv")
+        Using MyReader As New FileIO.TextFieldParser("./classeurPizza.csv")
 
             MyReader.TextFieldType = FileIO.FieldType.Delimited
             MyReader.SetDelimiters(";")
@@ -51,24 +49,25 @@ Public Class Form1
 
     End Sub
 
-    Private Sub showChoices()
+    Private Sub ShowChoices()
         For index = 0 To pizzas.Count - 1
             Dim zone As pizzaChoice
-            zone = New pizzaChoice
-            zone.Location = New Point(10, index * 150)
+            zone = New pizzaChoice With {
+                .Location = New Point(10, index * 150)
+            }
             zone.setPizza(pizzas(index))
-            AddHandler zone.pizzaAdded, AddressOf ajouterPizzaButtonClicked
+            AddHandler zone.pizzaAdded, AddressOf AjouterPizzaButtonClicked
             PanelPizza.Controls.Add(zone)
         Next
     End Sub
 
-    Private Sub ajouterPizzaButtonClicked(pizza As Pizza)
+    Private Sub AjouterPizzaButtonClicked(pizza As Pizza)
         Select Case state
             Case PossibleState.Idle
-                menuConfigOpened(pizza)
+                MenuConfigOpened(pizza)
                 state = PossibleState.ConfigurePizza
             Case PossibleState.AuMoinsUnePizza
-                menuConfigOpened(pizza)
+                MenuConfigOpened(pizza)
                 state = PossibleState.ConfigurePizza
             Case PossibleState.ConfigurePizza
                 'impossible
@@ -79,19 +78,19 @@ Public Class Form1
         End Select
     End Sub
 
-    Private Sub menuConfigOpened(pizza As Pizza)
-        menu = New menuConfigurer(pizza) With {
+    Private Sub MenuConfigOpened(pizza As Pizza)
+        menuConfig = New MenuConfigurer(pizza) With {
             .Location = New Point(150, 80)
         }
-        AddHandler menu.CloseMenu, AddressOf menuConfigClose
-        Controls.Add(menu)
-        menu.BringToFront()
+        AddHandler menuConfig.CloseMenu, AddressOf MenuConfigClose
+        Controls.Add(menuConfig)
+        menuConfig.BringToFront()
         PanelPizza.Enabled = False
     End Sub
 
-    Private Sub menuConfigClose()
-        Controls.Remove(menu)
-        Panier.setButtonValide()
+    Private Sub MenuConfigClose()
+        Controls.Remove(menuConfig)
+        Panier.SetButtonValide()
         PanelPizza.Enabled = True
         SetNbArticles()
     End Sub

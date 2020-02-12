@@ -1,14 +1,11 @@
-﻿Public Class menuConfigurer
-
-    Private supplements As New List(Of String)({"Crème fraiche", "Viande hachée", "Olives", "Pommes de terre", "Poivron", "Ananas"})
-    Private prix As New List(Of Single)({0.5, 1.0, 0.5, 0.5, 0.5, 0.5})
+﻿Public Class MenuConfigurer
 
     Private oldPizza, newPizza As Pizza
 
     Public Event CloseMenu()
     Public Event Valider()
 
-    Private Sub menuConfigurer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub MenuConfigurer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
@@ -67,10 +64,10 @@
             Case PossibleState.AuMoinsUnePizza
                 'impossible
             Case PossibleState.ConfigurePizza
-                changeIngredientAccepted()
+                ChangeIngredientAccepted()
                 state = PossibleState.ConfigurePizza
             Case PossibleState.ModifierPizza
-                changeIngredientAccepted()
+                ChangeIngredientAccepted()
                 state = PossibleState.ModifierPizza
             Case PossibleState.PanierValide
                 'impossible
@@ -84,17 +81,17 @@
             Case PossibleState.AuMoinsUnePizza
                 'impossible
             Case PossibleState.ConfigurePizza
-                changeSupplement()
+                ChangeSupplement()
                 state = PossibleState.ConfigurePizza
             Case PossibleState.ModifierPizza
-                changeSupplement()
+                ChangeSupplement()
                 state = PossibleState.ModifierPizza
             Case PossibleState.PanierValide
                 'impossible
         End Select
     End Sub
 
-    Private Sub changeIngredientAccepted()
+    Private Sub ChangeIngredientAccepted()
         Dim list As List(Of String)
         list = New List(Of String)
         For Each ingredient In CheckedListBox1.CheckedItems
@@ -102,7 +99,7 @@
         Next
         newPizza.ingredientsAccepted = list
     End Sub
-    Private Sub changeSupplement()
+    Private Sub ChangeSupplement()
         Dim list As List(Of String)
         list = New List(Of String)
         For Each ingredient In CheckedListBox2.CheckedItems
@@ -112,19 +109,19 @@
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-        tailleRadioButtonChanged(26)
+        TailleRadioButtonChanged(26)
     End Sub
 
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        tailleRadioButtonChanged(32)
+        TailleRadioButtonChanged(32)
     End Sub
 
     Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
-        tailleRadioButtonChanged(38)
+        TailleRadioButtonChanged(38)
     End Sub
 
-    Private Sub tailleRadioButtonChanged(taille As Single)
+    Private Sub TailleRadioButtonChanged(taille As Single)
         Select Case state
             Case PossibleState.Idle
                 'impossible

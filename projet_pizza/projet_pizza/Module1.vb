@@ -18,25 +18,25 @@
 
     Public Sub Main()
         state = PossibleState.Idle
-        AddHandler Accueil.PanierWindow, AddressOf to_Panier
-        AddHandler Panier.AccueilWindow, AddressOf to_Accueil
-        AddHandler Panier.ValiderCommande, AddressOf to_End
-        to_Accueil()
+        AddHandler Accueil.PanierWindow, AddressOf To_Panier
+        AddHandler Panier.AccueilWindow, AddressOf To_Accueil
+        AddHandler Panier.ValiderCommande, AddressOf To_End
+        To_Accueil()
     End Sub
 
     ' Fonction pour aller sur la fenêtre du panier
-    Private Sub to_Panier()
+    Private Sub To_Panier()
         Accueil.Hide()
         Panier.Show()
         Validation.Hide()
     End Sub
 
-    Private Sub to_Accueil()
+    Private Sub To_Accueil()
         Panier.Hide()
         Accueil.Show()
         Validation.Hide()
     End Sub
-    Private Sub to_End()
+    Private Sub To_End()
         Panier.Hide()
         Accueil.Hide()
         Validation.Show()
