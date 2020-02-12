@@ -6,8 +6,9 @@ Public Class Form1
     'Dim pizzasSelected As New List(Of Pizza)
     Public Event PanierWindow()
 
+    Private menu As menuConfigurer
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Console.WriteLine("toto")
         Load_Pizza()
         showChoices()
 
@@ -31,7 +32,6 @@ Public Class Form1
                         26,
                         currentRow.GetValue(3),
                         Single.Parse(currentRow.GetValue(4)))
-                    p.Print()
                     pizzas.Add(p)
                 Catch ex As Exception
 
@@ -54,7 +54,43 @@ Public Class Form1
     End Sub
 
     Private Sub ajouterPizzaButtonClicked(pizza As Pizza)
-        Console.WriteLine(pizza.name)
+        Select Case state
+            Case PossibleState.Idle
+                menuOpened(pizza)
+                state = PossibleState.ConfigurePizza
+            Case PossibleState.AuMoinsUnePizza
+                menuOpened(pizza)
+                state = PossibleState.ConfigurePizza
+            Case PossibleState.ConfigurePizza
+                'impossible
+            Case PossibleState.ModifierPizza
+                'impossible
+            Case PossibleState.PanierValide
+                'impossible
+        End Select
     End Sub
 
+    Private Sub menuOpened(pizza As Pizza)
+        menu = New menuConfigurer(pizza) With {
+            .Location = New Point(150, 80)
+        }
+        AddHandler menu.CloseMenu, AddressOf closeMenuConfigue
+        Controls.Add(menu)
+        menu.BringToFront()
+        PanelPizza.Enabled = False
+    End Sub
+
+    Private Sub closeMenuConfigue()
+        Controls.Remove(menu)
+        Panier.setButtonValide()
+        PanelPizza.Enabled = True
+    End Sub
+
+    Private Sub ButtonToPanier_Click(sender As Object, e As EventArgs) Handles ButtonToPanier.Click
+        RaiseEvent PanierWindow()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        ButtonToPanier_Click(sender, e)
+    End Sub
 End Class

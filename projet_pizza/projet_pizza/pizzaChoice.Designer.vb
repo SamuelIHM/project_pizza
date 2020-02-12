@@ -58,12 +58,16 @@ Partial Class pizzaChoice
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(533, 99)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(233, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(509, 89)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(111, 23)
+        Me.Button1.Size = New System.Drawing.Size(135, 33)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Ajouter au panier"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'pizzaPrice
         '
