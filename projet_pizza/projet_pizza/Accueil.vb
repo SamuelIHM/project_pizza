@@ -14,6 +14,14 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Form2_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        SetNbArticles()
+    End Sub
+
+    Private Sub SetNbArticles()
+        LabelCountArticle.Text = pizzasInPannier.Count.ToString
+    End Sub
+
     Private Sub Load_Pizza()
 
         Using MyReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("./classeurPizza.csv")
@@ -85,6 +93,7 @@ Public Class Form1
         Controls.Remove(menu)
         Panier.setButtonValide()
         PanelPizza.Enabled = True
+        SetNbArticles()
     End Sub
 
     Private Sub ButtonToPanier_Click(sender As Object, e As EventArgs) Handles ButtonToPanier.Click

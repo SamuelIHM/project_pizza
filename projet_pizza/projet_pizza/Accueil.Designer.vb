@@ -27,6 +27,8 @@ Partial Class Form1
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.ButtonToPanier = New Microsoft.VisualBasic.PowerPacks.OvalShape()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.OvalShape1 = New Microsoft.VisualBasic.PowerPacks.OvalShape()
+        Me.LabelCountArticle = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'PanelPizza
@@ -53,7 +55,7 @@ Partial Class Form1
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.ButtonToPanier})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.OvalShape1, Me.ButtonToPanier})
         Me.ShapeContainer1.Size = New System.Drawing.Size(810, 689)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
@@ -71,11 +73,31 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(735, 42)
+        Me.Label1.Location = New System.Drawing.Point(735, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Panier"
+        '
+        'OvalShape1
+        '
+        Me.OvalShape1.BackColor = System.Drawing.Color.Red
+        Me.OvalShape1.BorderColor = System.Drawing.SystemColors.Control
+        Me.OvalShape1.FillColor = System.Drawing.Color.Red
+        Me.OvalShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.OvalShape1.Location = New System.Drawing.Point(719, 10)
+        Me.OvalShape1.Name = "OvalShape1"
+        Me.OvalShape1.Size = New System.Drawing.Size(24, 24)
+        '
+        'LabelCountArticle
+        '
+        Me.LabelCountArticle.AutoSize = True
+        Me.LabelCountArticle.BackColor = System.Drawing.Color.Red
+        Me.LabelCountArticle.Location = New System.Drawing.Point(725, 15)
+        Me.LabelCountArticle.Name = "LabelCountArticle"
+        Me.LabelCountArticle.Size = New System.Drawing.Size(13, 13)
+        Me.LabelCountArticle.TabIndex = 5
+        Me.LabelCountArticle.Text = "0"
         '
         'Form1
         '
@@ -84,6 +106,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(25, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(810, 689)
+        Me.Controls.Add(Me.LabelCountArticle)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PanelPizza)
@@ -99,4 +122,6 @@ Partial Class Form1
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents ButtonToPanier As PowerPacks.OvalShape
     Friend WithEvents Label1 As Label
+    Friend WithEvents OvalShape1 As PowerPacks.OvalShape
+    Friend WithEvents LabelCountArticle As Label
 End Class
