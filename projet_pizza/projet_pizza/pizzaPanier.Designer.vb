@@ -22,7 +22,7 @@ Partial Class pizzaPanier
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PanelImg = New System.Windows.Forms.Panel()
+        Me.PanelPhoto = New System.Windows.Forms.Panel()
         Me.LabelName = New System.Windows.Forms.Label()
         Me.ButtonModifier = New System.Windows.Forms.Button()
         Me.ButtonDelete = New System.Windows.Forms.Button()
@@ -31,12 +31,13 @@ Partial Class pizzaPanier
         Me.LabelPrix = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'PanelImg
+        'PanelPhoto
         '
-        Me.PanelImg.Location = New System.Drawing.Point(4, 4)
-        Me.PanelImg.Name = "PanelImg"
-        Me.PanelImg.Size = New System.Drawing.Size(158, 90)
-        Me.PanelImg.TabIndex = 0
+        Me.PanelPhoto.AccessibleRole = System.Windows.Forms.AccessibleRole.WhiteSpace
+        Me.PanelPhoto.Location = New System.Drawing.Point(4, 4)
+        Me.PanelPhoto.Name = "PanelPhoto"
+        Me.PanelPhoto.Size = New System.Drawing.Size(158, 90)
+        Me.PanelPhoto.TabIndex = 0
         '
         'LabelName
         '
@@ -109,7 +110,7 @@ Partial Class pizzaPanier
         Me.Controls.Add(Me.ButtonDelete)
         Me.Controls.Add(Me.ButtonModifier)
         Me.Controls.Add(Me.LabelName)
-        Me.Controls.Add(Me.PanelImg)
+        Me.Controls.Add(Me.PanelPhoto)
         Me.Name = "pizzaPanier"
         Me.Size = New System.Drawing.Size(683, 97)
         Me.ResumeLayout(False)
@@ -117,7 +118,7 @@ Partial Class pizzaPanier
 
     End Sub
 
-    Friend WithEvents PanelImg As Panel
+    Friend WithEvents PanelPhoto As Panel
     Friend WithEvents LabelName As Label
     Friend WithEvents ButtonModifier As Button
     Friend WithEvents ButtonDelete As Button

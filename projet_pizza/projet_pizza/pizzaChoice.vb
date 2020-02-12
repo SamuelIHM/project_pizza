@@ -12,6 +12,11 @@
         For Each ingredient As String In pizza.ingredients
             PizzaIngredients.Text += ingredient + " "
         Next
+
+        Dim image As Image
+        image = Image.FromFile("img/" + pizza.img)
+        PanelPhoto.BackgroundImage = New Bitmap(image, New Point(PanelPhoto.Width, PanelPhoto.Height))
+
     End Sub
 
     Private Sub UserControl1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,4 +26,5 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RaiseEvent pizzaAdded(pizza)
     End Sub
+
 End Class

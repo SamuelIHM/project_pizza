@@ -3,16 +3,17 @@
 Public Class Pizza
 
     Public id, taille As Integer
-    Public name As String
+    Public name, img As String
     Public ingredients, ingredientsAccepted, supplements As List(Of String)
     Public prix, prixTotal As Single
 
-    Public Sub New(ByVal id As Integer, ByVal name As String, ByVal taille As Integer, ByVal ingredients As String, ByVal prix As Single)
+    Public Sub New(ByVal id As Integer, ByVal name As String, ByVal taille As Integer, ByVal ingredients As String, ByVal prix As Single, ByVal img As String)
         Me.id = id
         Me.name = name
         Me.taille = taille
         Me.prix = prix
         Me.prixTotal = prix
+        Me.img = img
 
         Me.ingredients = New List(Of String)
         Me.supplements = New List(Of String)
@@ -33,6 +34,7 @@ Public Class Pizza
         Me.taille = p.taille
         Me.prix = p.prix
         Me.prixTotal = p.prixTotal
+        Me.img = p.img
 
         Me.ingredients = New List(Of String)
         Me.supplements = New List(Of String)

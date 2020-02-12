@@ -35,6 +35,10 @@
                 LabelMinus.Text += ingredient + "  "
             End If
         Next
+
+        Dim image As Image
+        image = Image.FromFile("img/" + pizza.img)
+        PanelPhoto.BackgroundImage = New Bitmap(image, New Point(PanelPhoto.Width, PanelPhoto.Height))
     End Sub
 
     Private Sub pizzaPanier_Load(sender As Object, e As EventArgs) Handles MyBase.Load

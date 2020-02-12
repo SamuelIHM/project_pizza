@@ -31,7 +31,8 @@ Public Class Form1
                         currentRow.GetValue(1),
                         26,
                         currentRow.GetValue(3),
-                        Single.Parse(currentRow.GetValue(4)))
+                        Single.Parse(currentRow.GetValue(4)),
+                        currentRow.GetValue(5))
                     pizzas.Add(p)
                 Catch ex As Exception
 
@@ -56,10 +57,10 @@ Public Class Form1
     Private Sub ajouterPizzaButtonClicked(pizza As Pizza)
         Select Case state
             Case PossibleState.Idle
-                menuOpened(pizza)
+                menuConfigOpened(pizza)
                 state = PossibleState.ConfigurePizza
             Case PossibleState.AuMoinsUnePizza
-                menuOpened(pizza)
+                menuConfigOpened(pizza)
                 state = PossibleState.ConfigurePizza
             Case PossibleState.ConfigurePizza
                 'impossible
@@ -70,17 +71,17 @@ Public Class Form1
         End Select
     End Sub
 
-    Private Sub menuOpened(pizza As Pizza)
+    Private Sub menuConfigOpened(pizza As Pizza)
         menu = New menuConfigurer(pizza) With {
             .Location = New Point(150, 80)
         }
-        AddHandler menu.CloseMenu, AddressOf closeMenuConfigue
+        AddHandler menu.CloseMenu, AddressOf menuConfigClose
         Controls.Add(menu)
         menu.BringToFront()
         PanelPizza.Enabled = False
     End Sub
 
-    Private Sub closeMenuConfigue()
+    Private Sub menuConfigClose()
         Controls.Remove(menu)
         Panier.setButtonValide()
         PanelPizza.Enabled = True

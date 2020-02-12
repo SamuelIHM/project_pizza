@@ -22,19 +22,19 @@ Partial Class pizzaChoice
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PanelPhoto = New System.Windows.Forms.Panel()
         Me.pizzaName = New System.Windows.Forms.Label()
         Me.PizzaIngredients = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.pizzaPrice = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Panel1
+        'PanelPhoto
         '
-        Me.Panel1.Location = New System.Drawing.Point(13, 13)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(146, 109)
-        Me.Panel1.TabIndex = 0
+        Me.PanelPhoto.Location = New System.Drawing.Point(13, 13)
+        Me.PanelPhoto.Name = "PanelPhoto"
+        Me.PanelPhoto.Size = New System.Drawing.Size(146, 109)
+        Me.PanelPhoto.TabIndex = 0
         '
         'pizzaName
         '
@@ -88,7 +88,7 @@ Partial Class pizzaChoice
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PizzaIngredients)
         Me.Controls.Add(Me.pizzaName)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PanelPhoto)
         Me.Name = "pizzaChoice"
         Me.Size = New System.Drawing.Size(660, 138)
         Me.ResumeLayout(False)
@@ -96,7 +96,7 @@ Partial Class pizzaChoice
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PanelPhoto As Panel
     Friend WithEvents pizzaName As Label
     Friend WithEvents PizzaIngredients As Label
     Friend WithEvents Button1 As Button
